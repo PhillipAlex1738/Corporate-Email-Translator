@@ -21,7 +21,7 @@ const Translator: React.FC<TranslatorProps> = () => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:3000/api/translate', {
+      const response = await fetch('/api/translate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
