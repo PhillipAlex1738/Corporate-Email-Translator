@@ -30,5 +30,6 @@
       "src": "/(.*)",
       "dest": "/dist/index.html"
     }
-  ]
+  ],
+  "analytics": true
 }

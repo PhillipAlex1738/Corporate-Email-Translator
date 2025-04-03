@@ -10,7 +10,16 @@ function App() {
       <Router>
         <SEO />
         <Layout />
-        <Analytics />
+        <Analytics
+          beforeSend={(event) => {
+            // Log events to console in development
+            if (process.env.NODE_ENV === 'development') {
+              console.log('Analytics Event:', event);
+            }
+            return event;
+          }}
+          debug={true} // Enable debug mode
+        />
       </Router>
     </HelmetProvider>
   );

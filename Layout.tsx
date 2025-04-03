@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Translator from './Translator';
 import Blog from './Blog';
@@ -7,6 +7,12 @@ import SEO from './SEO';
 
 const Layout: React.FC = () => {
   const location = useLocation();
+
+  useEffect(() => {
+    // Log page views
+    console.log('Page view:', location.pathname);
+    // You can also track custom events here
+  }, [location]);
 
   const getSEOConfig = () => {
     switch (location.pathname) {
